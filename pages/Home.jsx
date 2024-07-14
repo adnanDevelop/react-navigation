@@ -7,7 +7,7 @@ const Home = ({ navigation }) => {
       <TouchableOpacity
         onPress={() =>
           navigation.navigate("About", {
-            name: "Adnan",
+            name: "Adnan Tariq",
             age: 21,
             qualification: "Matric",
           })
