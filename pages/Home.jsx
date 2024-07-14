@@ -4,7 +4,15 @@ import React from "react";
 const Home = ({ navigation }) => {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <TouchableOpacity onPress={() => navigation.navigate("About")}>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate("About", {
+            name: "Adnan",
+            age: 21,
+            qualification: "Matric",
+          })
+        }
+      >
         <Text
           style={{
             fontWeight: "bold",
