@@ -31,8 +31,8 @@ export default function App() {
           // headerTitleStyle: "green",
           // headerTintColor: "white", // this is also for title color
           // headerTitle: "All Screen",
-          headerStyle: { backgroundColor: "yellow" },
           // headerShown: false,   this is for displaying header or not
+          headerStyle: { backgroundColor: "black" },
         }}
       >
         <Stack.Screen
