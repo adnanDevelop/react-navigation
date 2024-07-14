@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
+import BottomNavigation from "./pages/BottomNavigation";
 
 const Stack = createNativeStackNavigator();
 
@@ -40,6 +41,11 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen name="About" component={About} />
+        <Stack.Screen
+          name="bottomnavigation"
+          component={BottomNavigation}
+          // options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React from "react";
 
 const About = ({ navigation, route }) => {
-  console.log(route?.params);
+  // console.log(route?.params);
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>My name is: {route?.params.name}</Text>
