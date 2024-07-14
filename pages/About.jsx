@@ -5,9 +5,9 @@ const About = ({ navigation, route }) => {
   // console.log(route?.params);
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>My name is: {route?.params.name}</Text>
-      <Text>My age is: {route?.params.age}</Text>
-      <Text>And my qualification is: {route?.params.age}</Text>
+      <Text>My name is: {route?.params?.name}</Text>
+      <Text>My age is: {route?.params?.age}</Text>
+      <Text>And my qualification is: {route?.params?.qualification}</Text>
 
       <TouchableOpacity onPress={() => navigation.navigate("Home")}>
         <Text

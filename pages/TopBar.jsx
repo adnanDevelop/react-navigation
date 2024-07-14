@@ -1,11 +1,12 @@
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import TopBar from "./TopBar";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import Home from "./Home";
+import About from "./About";
 
-const Tab = createBottomTabNavigator();
+const Tab = createMaterialTopTabNavigator();
 
-const Setting = ({ navigation }) => {
+const Chat = ({ navigation }) => {
   return (
     <View
       style={{
@@ -16,7 +17,7 @@ const Setting = ({ navigation }) => {
       }}
     >
       <Text style={{ fontSize: 40, fontWeight: 800, color: "white" }}>
-        Setting page
+        Chat Screen
       </Text>
       <TouchableOpacity
         onPress={() =>
@@ -40,25 +41,25 @@ const Setting = ({ navigation }) => {
             marginTop: 10,
           }}
         >
-          Go to About
+          Go to Home
         </Text>
       </TouchableOpacity>
     </View>
   );
 };
 
-const Portfolio = ({ navigation }) => {
+const Group = ({ navigation }) => {
   return (
     <View
       style={{
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "yellow",
+        backgroundColor: "blue",
       }}
     >
       <Text style={{ fontSize: 40, fontWeight: 800, color: "white" }}>
-        Portfolio page
+        Group Screen
       </Text>
       <TouchableOpacity
         onPress={() =>
@@ -82,26 +83,25 @@ const Portfolio = ({ navigation }) => {
             marginTop: 10,
           }}
         >
-          Go to About
+          Go to Home
         </Text>
       </TouchableOpacity>
     </View>
   );
 };
 
-const Custom = ({ navigation }) => {
+const Call = ({ navigation }) => {
   return (
     <View
       style={{
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "pink",
+        backgroundColor: "blue",
       }}
     >
       <Text style={{ fontSize: 40, fontWeight: 800, color: "white" }}>
-        {" "}
-        Custom page
+        Call Screen
       </Text>
       <TouchableOpacity
         onPress={() =>
@@ -125,31 +125,68 @@ const Custom = ({ navigation }) => {
             marginTop: 10,
           }}
         >
-          Go to About
+          Go to Home
         </Text>
       </TouchableOpacity>
     </View>
   );
 };
 
-const BottomNavigation = () => {
+const Status = ({ navigation }) => {
+  return (
+    <View
+      style={{
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "blue",
+      }}
+    >
+      <Text style={{ fontSize: 40, fontWeight: 800, color: "white" }}>
+        Status Screen
+      </Text>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate("About", {
+            name: "Adnan Tariq",
+            age: 21,
+            qualification: "Matric",
+          })
+        }
+      >
+        <Text
+          style={{
+            fontWeight: "bold",
+            paddingHorizontal: 20,
+            height: 45,
+            lineHeight: 45,
+            backgroundColor: "blue",
+            color: "white",
+            textAlign: "center",
+            borderRadius: 10,
+            marginTop: 10,
+          }}
+        >
+          Go to Home
+        </Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+const TopBar = () => {
   return (
     <>
-      <Tab.Navigator
-        screenOptions={{
-          headerShown: false,
-          tabBarStyle: { backgroundColor: "black" },
-        }}
-      >
-        <Tab.Screen name="topbar" component={TopBar} />
-        <Tab.Screen name="setting" component={Setting} />
-        <Tab.Screen name="portfolio" component={Portfolio} />
-        <Tab.Screen name="custom" component={Custom} />
+      <Tab.Navigator>
+        <Tab.Screen name="Chat" component={Chat} />
+        <Tab.Screen name="Group" component={Group} />
+        <Tab.Screen name="Status" component={Status} />
+        <Tab.Screen name="Call" component={Call} />
       </Tab.Navigator>
     </>
   );
 };
 
-export default BottomNavigation;
+export default TopBar;
 
 const styles = StyleSheet.create({});
