@@ -4,6 +4,7 @@ import "react-native-gesture-handler";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import Home from "./Home";
 import TopBar from "./TopBar";
+import DrawerScreen from "./Drawer";
 
 const Drawer = createDrawerNavigator();
 
@@ -13,6 +14,7 @@ const About = () => {
       <Drawer.Navigator>
         <Drawer.Screen name="Home" component={Home} />
         <Drawer.Screen name="topbar" component={TopBar} />
+        <Drawer.Screen name="drawer" component={DrawerScreen} />
       </Drawer.Navigator>
     </>
   );

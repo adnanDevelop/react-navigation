@@ -30,8 +30,6 @@ const Home = ({ navigation }) => {
     fetchData();
   }, []);
 
-  console.log(data);
-
   return (
     <ScrollView>
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
