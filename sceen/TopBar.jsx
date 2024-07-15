@@ -1,8 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import Home from "./Home";
-import About from "./About";
 
 const Tab = createMaterialTopTabNavigator();
 

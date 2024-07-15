@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View, TouchableOpacity, Button } from "react-native";
+import { StyleSheet, View, Button } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import Home from "./pages/Home";
-import About from "./pages/About";
-import BottomNavigation from "./pages/BottomNavigation";
+import Home from "./screen/Home";
+import About from "./screen/About";
+import BottomNavigation from "./screen/BottomNavigation";
 
 const Stack = createNativeStackNavigator();
 
