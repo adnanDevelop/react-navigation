@@ -1,7 +1,35 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import React from "react";
+import {
+  ActivityIndicator,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import React, { useEffect, useState } from "react";
 
 const Home = ({ navigation }) => {
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState(null);
+
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      const apiData = await fetch(
+        "https://jsonplaceholder.typicode.com/users/1"
+      );
+      const response = await apiData.json();
+      setLoading(false);
+      setData(response);
+    } catch (error) {
+      console.log("Error while fetching data", error);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       {/* About page button */}
@@ -59,6 +87,17 @@ const Home = ({ navigation }) => {
       </TouchableOpacity>
 
       {/* calling api */}
+      <View style={{ marginTop: 20 }}>
+        {loading ? (
+          <ActivityIndicator size={50} color="blue" />
+        ) : (
+          <>
+            <Text>Data from api</Text>
+            <Text>Name: {data?.name}</Text>
+            <Text>Email: {data?.email}</Text>
+          </>
+        )}
+      </View>
     </View>
   );
 };
