@@ -7,6 +7,7 @@ import {
   Image,
   FlatList,
 } from "react-native";
+import { FontAwesome } from '@expo/vector-icons'; 
 
 const Drawer = () => {
   const [loading, setLoading] = useState(false);
@@ -51,10 +52,11 @@ const ProductCard = ({ item }) => {
   return (
     <View style={{ marginBottom: 15 }}>
       <Text>Name: {item?.title}</Text>
-      <Image
+      {/* <Image
         source={{ uri: item?.image }}
         style={{ height: 250, objectFit: "cover" }}
-      />
+      /> */}
+     <FontAwesome name="user" size={30} color="green" />
     </View>
   );
 };
