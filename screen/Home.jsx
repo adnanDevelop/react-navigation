@@ -57,6 +57,8 @@ const Home = ({ navigation }) => {
           Go to Tab Navigation
         </Text>
       </TouchableOpacity>
+
+      {/* calling api */}
     </View>
   );
 };
